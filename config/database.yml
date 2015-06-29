@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: rails_wiki_development
+
+test:
+  <<: *default
+  database: rails_wiki_test
+
+production:
+  <<: *default
+  database: rails_wikiproduction
+  username: rails_wiki
+  password: <%= ENV['EXAMPLE_DATABASE_PASSWORD'] %>
